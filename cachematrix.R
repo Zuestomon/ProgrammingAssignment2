@@ -1,7 +1,7 @@
 ################################################################################
 #        FILE: cachematrix.R
 #
-#      AUTHOR: Student  - Programming R - Data Science SPecialization
+#      AUTHOR: Student  - Programming R - Data Science Specialization
 #   SUBMITTED: 20 Feb. 2015
 #
 #     PURPOSE: The following two functions demonstrate R lexical scoping 
@@ -21,7 +21,7 @@
 #      input = The function output from makeCacheMatrix that contains the
 #              object value "x" as an externally available var whose environment
 #              is accessed outside of the makeCacheMatrix() function.
-#     output = The calculatye inverse of original matrix provide as input to 
+#     output = The calculated inverse of original matrix provide as input to 
 #              makeCacheMatrix().
 #
 #   RESOURCES:
