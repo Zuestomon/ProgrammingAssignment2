@@ -1,22 +1,30 @@
 ################################################################################
+#        FILE: cachematrix.R
 #
-# The following two functions demonstrate R lexical scoping 
-# file: cachematrix.R
-# 
-# makeCacheMatrix():  
+#      AUTHOR: Student  - Programming R - Data Science SPecialization
+#   SUBMITTED: 20 Feb. 2015
+#
+#     PURPOSE: The following two functions demonstrate R lexical scoping 
+#
+# DESCRIPTION:
+#
+#  makeCacheMatrix()  
 #      input = Takes a square matrix() as its input arg
 #     output = a list of functions to be used (fn1, fn2, fn3, ...)
 #              by external environments - exposes fn's to be called by another
 #              function in a different environment.
+#                       $ get      :function ()  
+#                       $ setmatrix:function (solve)  
+#                       $ getmatrix:function ()
 #
-# cacheSolve():
+#  cacheSolve()
 #      input = The function output from makeCacheMatrix that contains the
 #              object value "x" as an externally available var whose environment
-#              is scoped to be accessed outside of the makeCacheMatrix() function.
-#     output = The inverse of the original matrix provide as input to 
+#              is accessed outside of the makeCacheMatrix() function.
+#     output = The calculatye inverse of original matrix provide as input to 
 #              makeCacheMatrix().
 #
-# Resources:
+#   RESOURCES:
 # Original stub function provided by Programming R course instructor:
 # https://class.coursera.org/rprog-011/human_grading/view/courses/973492/
 # assessments/3/submissions
@@ -28,7 +36,10 @@
 #        - https://class.coursera.org/rprog-011/forum/thread?thread_id=625
 # git/github
 # http://git-scm.com/book/en/v2/Getting-Started-First-Time-Git-Setup
-# 
+#
+# Other:
+# coding styles, and "good" practices -
+# http://www.biostat.jhsph.edu/~bcaffo/statcomp/files/coding_ho.pdf 
 #
 #
 ################################################################################
@@ -45,7 +56,7 @@ makeCacheMatrix <- function(x = numeric()) {
         get <- function() x                       
         
         ##############################################################
-        # initialize the value to be applied to setmatrix
+        # initialize cache value to be applied to setmatrix
         ##############################################################
         setmatrix <- function(solve) m <<- solve  
         
@@ -76,14 +87,14 @@ cacheSolve <- function(x, ...) {
         # exist, so simply return it.
         ##############################################################
         if(!is.null(m)) {                        
-                message("retrieving cached matrix data")
+                message("cached matrix retrieved")
                 return(m)
         }
         
         ##############################################################
         # If the matrix value was NULL then retreive inputed matrix
         # calculate the inverse
-        # cache the matrix inverse abck to the scope from makeCacheMatrix 
+        # cache the matrix inverse back to the scope from makeCacheMatrix 
         # return the newly calculated matrix inverse
         ##############################################################
         data <- x$get()
